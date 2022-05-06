@@ -17,9 +17,9 @@ BUTTONS = {}
 BOT = {}
 SEND_CHANNEL = int(os.environ.get("SEND_CHANNEL"))
 SEND_USERNAME = os.environ.get("SEND_USERNAME")
-FILE_CAP = """<b>[{}]{}
+FILE_CAP = """<code>{} [{}]</code>
 
-{} {} ✨</b>
+<b>Hey 👋 {} ⚡🔥</b>
 
 🔰 ʙᴇᴄᴀᴜsᴇ ᴏꜰ ᴄᴏᴘʏʀɪɢʜᴛ ᴛʜɪs ꜰɪʟᴇ ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ꜰʀᴏᴍ ʜᴇʀᴇ ᴡɪᴛʜɪɴ 10 ᴍɪɴᴜᴛᴇs
 sᴏ ꜰᴏʀᴡᴀʀᴅ ɪᴛ ᴛᴏ ᴀɴʏᴡʜᴇʀᴇ ʙᴇꜰᴏʀᴇ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ!
@@ -29,15 +29,15 @@ sᴏ ꜰᴏʀᴡᴀʀᴅ ɪᴛ ᴛᴏ ᴀɴʏᴡʜᴇʀᴇ ʙᴇꜰᴏʀᴇ ᴅ�
 
 <b>✅ ᴘᴏᴡᴇʀᴇᴅ ʙʏ : {}</b>
 """
-autofiltercaption = """<b>🎬 Title : {}</b>
+autofiltercaption = """<b>🎬 Title : {title}</b>
                             
-⏱ Duration : {} minutes
-🌟 Rating : {}/10
-📆 Release : {}
-🎭 Genres : {}
+⏱ Duration : {runtime} minutes
+🌟 Rating : {rating}/10
+📆 Release : {year}
+🎭 Genres : {genre}
 
-<b>👤 Requested BY : {}
-✅ Powered BY : {}</b>"""
+<b>👤 Requested BY : {mention}
+✅ Powered BY : {chat}</b>"""
 
 MAX_LIST_ELM = int(5)
 def list_to_str(k):
@@ -344,16 +344,15 @@ sᴏ ꜰᴏʀᴡᴀʀᴅ ɪᴛ ᴛᴏ ᴀɴʏᴡʜᴇʀᴇ ʙᴇꜰᴏʀᴇ ᴅ�
                         InlineKeyboardButton("⚠️ Can't Access❓ Click Here ⚠️", url=f"https://t.me/{SEND_USERNAME}")
                         ]]
                 reply_markup=InlineKeyboardMarkup(humm)
-                msg1 = await query.message.reply(text=f"""Hey 👋 {query.from_user.mention} 
+                msg1 = await query.message.reply(text=f"""<b>Hey 👋 {query.from_user.mention} 
 
 📫 Yᴏʀ Fɪʟᴇ ɪꜱ Rᴇᴀᴅʏ 👇
 
-📂 Mᴏᴠɪᴇ Nᴀᴍᴇ : {title}
+📂 Mᴏᴠɪᴇ Nᴀᴍᴇ :</b> <code>{title}</code>
 
-⚙️ Mᴏᴠɪᴇ Sɪᴢᴇ : {size}
-
-<code>This message will be deleted after 10 minutes</code>""", reply_markup=reply_markup)
-                await asyncio.sleep(600)
+<b>⚙️ Mᴏᴠɪᴇ Sɪᴢᴇ : {size}</b>
+""", reply_markup=reply_markup)
+                await asyncio.sleep(5000)
                 await filess.delete()
                 await msg1.delete()
                 
