@@ -66,9 +66,10 @@ async def group(client, message):
         if files:
             for file in files:
                 file_id = file.file_id
-                filename = f"[{get_size(file.file_size)}] {file.file_name}"
+                filename = f"{file.file_name}"
+                filesize = f"[{get_size(file.file_size)}] "
                 btn.append(
-                    [InlineKeyboardButton(text=f"📁 {filename}", callback_data=f"subinps#{file_id}")]
+                    [InlineKeyboardButton(text=f"■ {filesize} - {filename}", callback_data=f"subinps#{file_id}")]
                 )
         else:
             google_keyword = search.replace(" ", "+")
