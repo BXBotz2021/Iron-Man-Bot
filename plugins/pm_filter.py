@@ -17,9 +17,9 @@ BUTTONS = {}
 BOT = {}
 SEND_CHANNEL = int(os.environ.get("SEND_CHANNEL"))
 SEND_USERNAME = os.environ.get("SEND_USERNAME")
-FILE_CAP = """<code>{} [{}]</code>
+FILE_CAP = """<b>Hey 👋 {} ⚡🔥</b>
 
-<b>Hey 👋 {} ⚡🔥</b>
+<code>{} [{}]</code>
 
 🔰 ʙᴇᴄᴀᴜsᴇ ᴏꜰ ᴄᴏᴘʏʀɪɢʜᴛ ᴛʜɪs ꜰɪʟᴇ ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ꜰʀᴏᴍ ʜᴇʀᴇ ᴡɪᴛʜɪɴ 10 ᴍɪɴᴜᴛᴇs
 sᴏ ꜰᴏʀᴡᴀʀᴅ ɪᴛ ᴛᴏ ᴀɴʏᴡʜᴇʀᴇ ʙᴇꜰᴏʀᴇ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ!
@@ -312,9 +312,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         print(e)
                         f_caption=f_caption
                 if f_caption is None:
-                    f_caption = f"""<code>{title} [{size}]</code>
+                    f_caption = f"""<b>Hey 👋 {query.from_user.mention} ⚡🔥</b>
 
-<b>Hey 👋 {query.from_user.mention} ⚡🔥</b>
+<code>{title} [{size}]</code>
 
 🔰 ʙᴇᴄᴀᴜsᴇ ᴏꜰ ᴄᴏᴘʏʀɪɢʜᴛ ᴛʜɪs ꜰɪʟᴇ ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ꜰʀᴏᴍ ʜᴇʀᴇ ᴡɪᴛʜɪɴ 10 ᴍɪɴᴜᴛᴇs
 sᴏ ꜰᴏʀᴡᴀʀᴅ ɪᴛ ᴛᴏ ᴀɴʏᴡʜᴇʀᴇ ʙᴇꜰᴏʀᴇ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ!
@@ -333,7 +333,7 @@ sᴏ ꜰᴏʀᴡᴀʀᴅ ɪᴛ ᴛᴏ ᴀɴʏᴡʜᴇʀᴇ ʙᴇꜰᴏʀᴇ ᴅ�
                 filess = await client.send_cached_media(
                     chat_id=SEND_CHANNEL,
                     file_id=file_id,
-                    caption=FILE_CAP.format(size, title, get, mention, chat),
+                    caption=FILE_CAP.format(mention, title, size, chat),
                     reply_markup=InlineKeyboardMarkup(buttons)
                     )
                 
