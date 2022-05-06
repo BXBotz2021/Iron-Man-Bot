@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 @Client.on_message(filters.command("start"))
 async def start(bot, cmd):
     await cmd.reply_text(
-        START_MSG,
+        START_MSG.format(cmd.from_user.mention),
         disable_web_page_preview=True,
         reply_markup=InlineKeyboardMarkup(
             [
