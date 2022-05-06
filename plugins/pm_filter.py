@@ -312,9 +312,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         print(e)
                         f_caption=f_caption
                 if f_caption is None:
-                    f_caption = f"""<b>[{size}]{title}
+                    f_caption = f"""<code>{title} [{size}]</code>
 
-{get} {query.from_user.mention} ✨</b>
+<b>Hey 👋 {query.from_user.mention} ⚡🔥</b>
 
 🔰 ʙᴇᴄᴀᴜsᴇ ᴏꜰ ᴄᴏᴘʏʀɪɢʜᴛ ᴛʜɪs ꜰɪʟᴇ ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ꜰʀᴏᴍ ʜᴇʀᴇ ᴡɪᴛʜɪɴ 10 ᴍɪɴᴜᴛᴇs
 sᴏ ꜰᴏʀᴡᴀʀᴅ ɪᴛ ᴛᴏ ᴀɴʏᴡʜᴇʀᴇ ʙᴇꜰᴏʀᴇ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ!
