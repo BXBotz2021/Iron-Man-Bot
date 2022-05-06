@@ -2,14 +2,15 @@ import os
 import logging
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from info import START_MSG, CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION
+from info import START_MSG, CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION, PICS
 from utils import Media, get_file_details, get_size
 logger = logging.getLogger(__name__)
 
 @Client.on_message(filters.command("start"))
 async def start(bot, cmd):
-    await cmd.reply_text(
-        START_MSG.format(cmd.from_user.mention),
+    await cmd.reply_photo(
+        photo=random.choice(PICS),
+        caption=START_MSG.format(cmd.from_user.mention),
         disable_web_page_preview=True,
         reply_markup=InlineKeyboardMarkup(
             [
