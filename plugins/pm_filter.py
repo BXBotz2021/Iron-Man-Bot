@@ -29,15 +29,15 @@ sᴏ ꜰᴏʀᴡᴀʀᴅ ɪᴛ ᴛᴏ ᴀɴʏᴡʜᴇʀᴇ ʙᴇꜰᴏʀᴇ ᴅ�
 
 <b>✅ ᴘᴏᴡᴇʀᴇᴅ ʙʏ : {}</b>
 """
-autofiltercaption = """<b>🎬 Title : {title}</b>
+autofiltercaption = """<b>🎬 Title : {}</b>
                             
-⏱ Duration : {runtime} minutes
-🌟 Rating : {rating}/10
-📆 Release : {year}
-🎭 Genres : {genre}
+⏱ Duration : {} minutes
+🌟 Rating : {}/10
+📆 Release : {}
+🎭 Genres : {}
 
-<b>👤 Requested BY : {mention}
-✅ Powered BY : {chat}</b>"""
+<b>👤 Requested BY : {}
+✅ Powered BY : {}</b>"""
 
 MAX_LIST_ELM = int(5)
 def list_to_str(k):
@@ -127,7 +127,7 @@ Click on buttons below to search on google or IMDb</b>
                 fileid = movies[0].get_fullsizeURL()
                 mention = message.from_user.mention
                 chat = message.chat.title
-                dell = await message.reply_photo(photo=fileid, caption=autofiltercaption.format(title, runtime, rating, year, genre, stars, plot, mention, chat), reply_markup=InlineKeyboardMarkup(buttons))  
+                dell = await message.reply_photo(photo=fileid, caption=autofiltercaption.format(title, runtime, rating, year, genre, mention, chat), reply_markup=InlineKeyboardMarkup(buttons))  
                 await asyncio.sleep(600)
                 await dell.delete()
    
@@ -173,7 +173,7 @@ Click on buttons below to search on google or IMDb</b>
             fileid = movies[0].get_fullsizeURL()
             mention = message.from_user.mention
             chat = message.chat.title
-            del2 = await message.reply_photo(photo=fileid, caption=autofiltercaption.format(title, runtime, rating, year, genre, stars, plot, mention, chat), reply_markup=InlineKeyboardMarkup(buttons))  
+            del2 = await message.reply_photo(photo=fileid, caption=autofiltercaption.format(title, runtime, rating, year, genre, mention, chat), reply_markup=InlineKeyboardMarkup(buttons))  
             await asyncio.sleep(600)
             await del2.delete()
    
