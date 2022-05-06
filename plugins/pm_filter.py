@@ -128,7 +128,7 @@ Click on buttons below to search on google or IMDb</b>
                 mention = message.from_user.mention
                 chat = message.chat.title
                 dell = await message.reply_photo(photo=fileid, caption=autofiltercaption.format(title, runtime, rating, year, genre, mention), reply_markup=InlineKeyboardMarkup(buttons))  
-                await asyncio.sleep(600)
+                await asyncio.sleep(3000)
                 await dell.delete()
    
             else:
@@ -136,7 +136,7 @@ Click on buttons below to search on google or IMDb</b>
 
 📁 Found ✨  Files For Your Query : {search} 👇</b>""", 
                 reply_markup=InlineKeyboardMarkup(buttons))
-                await asyncio.sleep(600)
+                await asyncio.sleep(3000)
                 await del1.delete()
                
         btns = list(split_list(btn, 10)) 
@@ -163,8 +163,6 @@ Click on buttons below to search on google or IMDb</b>
             title = movie['title']
             year = movie['year']
             rating = movie['rating']
-            plo = movie['plot']
-            plot = plo[0]
             runtime = list_to_str(movie['runtime'])
             genre = list_to_str(movie['genres'])
             language = movie['languages']
@@ -174,7 +172,7 @@ Click on buttons below to search on google or IMDb</b>
             mention = message.from_user.mention
             chat = message.chat.title
             del2 = await message.reply_photo(photo=fileid, caption=autofiltercaption.format(title, runtime, rating, year, genre, mention), reply_markup=InlineKeyboardMarkup(buttons))  
-            await asyncio.sleep(600)
+            await asyncio.sleep(3000)
             await del2.delete()
    
         else:
@@ -182,7 +180,7 @@ Click on buttons below to search on google or IMDb</b>
 
 📁 Found ✨  Files For Your Query : {search} 👇</b>""", 
             reply_markup=InlineKeyboardMarkup(buttons))
-            await asyncio.sleep(600)
+            await asyncio.sleep(3000)
             await del3.delete()
      
 
