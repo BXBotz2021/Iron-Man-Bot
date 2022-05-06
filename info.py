@@ -8,6 +8,8 @@ SESSION = environ.get('SESSION', 'Media_search')
 API_ID = int(environ['API_ID'])
 API_HASH = environ['API_HASH']
 BOT_TOKEN = environ['BOT_TOKEN']
+PICS = (environ.get('PICS', 'https://telegra.ph/file/eca89d3d47c9cecb1a5fe.jpg https://telegra.ph/file/973d110ccceb19d734393.jpg https://telegra.ph/file/7fbc8a8034f40fb6d9231.jpg https://telegra.ph/file/0581ab49be624c61040a6.jpg https://telegra.ph/file/af71f7f5adfe9fd16c455.jpg')).split()
+
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
