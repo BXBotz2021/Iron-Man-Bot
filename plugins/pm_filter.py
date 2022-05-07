@@ -21,10 +21,10 @@ FILE_CAP = """<b>Hey 👋 {} ⚡🔥</b>
 
 <code>{} [{}]</code>
 
-🔰 ʙᴇᴄᴀᴜsᴇ ᴏꜰ ᴄᴏᴘʏʀɪɢʜᴛ ᴛʜɪs ꜰɪʟᴇ ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ꜰʀᴏᴍ ʜᴇʀᴇ ᴡɪᴛʜɪɴ 10 ᴍɪɴᴜᴛᴇs
+🔰 ʙᴇᴄᴀᴜsᴇ ᴏꜰ ᴄᴏᴘʏʀɪɢʜᴛ ᴛʜɪs ꜰɪʟᴇ ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ꜰʀᴏᴍ ʜᴇʀᴇ ᴡɪᴛʜɪɴ 20 ᴍɪɴᴜᴛᴇs
 sᴏ ꜰᴏʀᴡᴀʀᴅ ɪᴛ ᴛᴏ ᴀɴʏᴡʜᴇʀᴇ ʙᴇꜰᴏʀᴇ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ!
 
-<i>കോപ്പിറൈറ്റ് ഉള്ളതുകൊണ്ട് ഈ ഫയൽ 10 മിനിറ്റിനുള്ളിൽ ഇവിടെനിന്നും ഡിലീറ്റ് ആകുന്നതാണ്
+<i>കോപ്പിറൈറ്റ് ഉള്ളതുകൊണ്ട് ഈ ഫയൽ 20 മിനിറ്റിനുള്ളിൽ ഇവിടെനിന്നും ഡിലീറ്റ് ആകുന്നതാണ്
 അതുകൊണ്ട് ഇവിടെ നിന്നും മറ്റെവിടെക്കെങ്കിലും മാറ്റിയതിന് ശേഷം ഡൗൺലോഡ് ചെയ്യുക!</i>
 
 <b>✅ ᴘᴏᴡᴇʀᴇᴅ ʙʏ : {}</b>
@@ -115,19 +115,19 @@ Click on buttons below to search on google or IMDb</b>
                 id = movies[0].getID()
                 movie = ia.get_movie(id)
                 title = movie['title']
-                year = movie['year']
+                runtime = list_to_str(movie['runtime'])
                 rating = movie['rating']
+                year = movie['year']
+                genre = list_to_str(movie['genres'])
                 plo = movie['plot']
                 plot = plo[0]
-                runtime = list_to_str(movie['runtime'])
-                genre = list_to_str(movie['genres'])
                 language = movie['languages']
                 director = movie['director']
                 stars = list_to_str(movie['cast'])
                 fileid = movies[0].get_fullsizeURL()
                 mention = message.from_user.mention
                 chat = message.chat.title
-                dell = await message.reply_photo(photo=fileid, caption=autofiltercaption.format(title, runtime, rating, year, genre, mention), reply_markup=InlineKeyboardMarkup(buttons))  
+                dell = await message.reply_photo(photo=fileid, caption=autofiltercaption.format(title, year, rating, runtime, genre, mention), reply_markup=InlineKeyboardMarkup(buttons))  
                 await asyncio.sleep(3000)
                 await dell.delete()
    
@@ -171,7 +171,7 @@ Click on buttons below to search on google or IMDb</b>
             fileid = movies[0].get_fullsizeURL()
             mention = message.from_user.mention
             chat = message.chat.title
-            del2 = await message.reply_photo(photo=fileid, caption=autofiltercaption.format(title, runtime, rating, year, genre, mention), reply_markup=InlineKeyboardMarkup(buttons))  
+            del2 = await message.reply_photo(photo=fileid, caption=autofiltercaption.format(title, year, rating, runtime, genre, mention), reply_markup=InlineKeyboardMarkup(buttons))  
             await asyncio.sleep(3000)
             await del2.delete()
    
@@ -314,10 +314,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
 <code>{title} [{size}]</code>
 
-🔰 ʙᴇᴄᴀᴜsᴇ ᴏꜰ ᴄᴏᴘʏʀɪɢʜᴛ ᴛʜɪs ꜰɪʟᴇ ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ꜰʀᴏᴍ ʜᴇʀᴇ ᴡɪᴛʜɪɴ 10 ᴍɪɴᴜᴛᴇs
+🔰 ʙᴇᴄᴀᴜsᴇ ᴏꜰ ᴄᴏᴘʏʀɪɢʜᴛ ᴛʜɪs ꜰɪʟᴇ ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ꜰʀᴏᴍ ʜᴇʀᴇ ᴡɪᴛʜɪɴ 20 ᴍɪɴᴜᴛᴇs
 sᴏ ꜰᴏʀᴡᴀʀᴅ ɪᴛ ᴛᴏ ᴀɴʏᴡʜᴇʀᴇ ʙᴇꜰᴏʀᴇ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ!
 
-<i>കോപ്പിറൈറ്റ് ഉള്ളതുകൊണ്ട് ഈ ഫയൽ 10 മിനിറ്റിനുള്ളിൽ ഇവിടെനിന്നും ഡിലീറ്റ് ആകുന്നതാണ്
+<i>കോപ്പിറൈറ്റ് ഉള്ളതുകൊണ്ട് ഈ ഫയൽ 20 മിനിറ്റിനുള്ളിൽ ഇവിടെനിന്നും ഡിലീറ്റ് ആകുന്നതാണ്
 അതുകൊണ്ട് ഇവിടെ നിന്നും മറ്റെവിടെക്കെങ്കിലും മാറ്റിയതിന് ശേഷം ഡൗൺലോഡ് ചെയ്യുക!</i>
 
 <b>✅ ᴘᴏᴡᴇʀᴇᴅ ʙʏ : {query.chat.title}</b>"""
@@ -350,7 +350,7 @@ sᴏ ꜰᴏʀᴡᴀʀᴅ ɪᴛ ᴛᴏ ᴀɴʏᴡʜᴇʀᴇ ʙᴇꜰᴏʀᴇ ᴅ�
 
 <b>⚙️ Mᴏᴠɪᴇ Sɪᴢᴇ : {size}</b>
 """, reply_markup=reply_markup)
-                await asyncio.sleep(5000)
+                await asyncio.sleep(1200)
                 await filess.delete()
                 await msg1.delete()
                 
