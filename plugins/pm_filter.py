@@ -31,9 +31,9 @@ sᴏ ꜰᴏʀᴡᴀʀᴅ ɪᴛ ᴛᴏ ᴀɴʏᴡʜᴇʀᴇ ʙᴇꜰᴏʀᴇ ᴅ�
 """
 autofiltercaption = """<b>🎬 Title : {}
                             
-⏱ Duration : {} minutes
-🌟 Rating : {}/10
 📆 Release : {}
+🌟 Rating : {}/10
+⏱ Duration : {} minutes
 🎭 Genres : {}
 👤 Requested BY : {}</b>
 """
