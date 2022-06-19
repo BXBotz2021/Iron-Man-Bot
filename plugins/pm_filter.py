@@ -149,7 +149,7 @@ Click on buttons below to search on google or IMDb</b>
         buttons = data['buttons'][0].copy()
 
         buttons.append(
-            [InlineKeyboardButton(text="NEXT ⏩",callback_data=f"next_0_{keyword}")]
+            [InlineKeyboardButton(text="ɴᴇxᴛ ☞",callback_data=f"next_0_{keyword}")]
         )
         if BUTTON:
             buttons.append([InlineKeyboardButton(text="ᴄʟᴏsᴇ 🔒",callback_data="close")])
@@ -223,7 +223,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 buttons = data['buttons'][int(index)+1].copy()
 
                 buttons.append(
-                    [InlineKeyboardButton("⏪ BACK", callback_data=f"back_{int(index)+1}_{keyword}")]
+                    [InlineKeyboardButton("☜ ʙᴀᴄᴋ", callback_data=f"back_{int(index)+1}_{keyword}")]
                 )
                 if BUTTON:
                     buttons.append([InlineKeyboardButton(text="ᴄʟᴏsᴇ 🔒",callback_data="close")])
@@ -236,7 +236,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 buttons = data['buttons'][int(index)+1].copy()
 
                 buttons.append(
-                    [InlineKeyboardButton("⏪ BACK", callback_data=f"back_{int(index)+1}_{keyword}"),InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{int(index)+1}_{keyword}")]
+                    [InlineKeyboardButton("☜ ʙᴀᴄᴋ", callback_data=f"back_{int(index)+1}_{keyword}"),InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{int(index)+1}_{keyword}")]
                 )
                 if BUTTON:
                     buttons.append([InlineKeyboardButton(text="ᴄʟᴏsᴇ 🔒",callback_data="close")])
@@ -258,7 +258,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 buttons = data['buttons'][int(index)-1].copy()
 
                 buttons.append(
-                    [InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{int(index)-1}_{keyword}")]
+                    [InlineKeyboardButton("ɴᴇxᴛ ☞", callback_data=f"next_{int(index)-1}_{keyword}")]
                 )
                 if BUTTON:
                     buttons.append([InlineKeyboardButton(text="ᴄʟᴏsᴇ 🔒",callback_data="close")])
@@ -271,7 +271,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 buttons = data['buttons'][int(index)-1].copy()
 
                 buttons.append(
-                    [InlineKeyboardButton("⏪ BACK", callback_data=f"back_{int(index)-1}_{keyword}"),InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{int(index)-1}_{keyword}")]
+                    [InlineKeyboardButton("☜ ʙᴀᴄᴋ", callback_data=f"back_{int(index)-1}_{keyword}"),InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{int(index)-1}_{keyword}")]
                 )
                 if BUTTON:
                     buttons.append([InlineKeyboardButton(text="ᴄʟᴏsᴇ 🔒",callback_data="close")])
@@ -323,7 +323,7 @@ sᴏ ꜰᴏʀᴡᴀʀᴅ ɪᴛ ᴛᴏ ᴀɴʏᴡʜᴇʀᴇ ʙᴇꜰᴏʀᴇ ᴅ�
 <b>✅ ᴘᴏᴡᴇʀᴇᴅ ʙʏ : {query.chat.title}</b>"""
                 buttons = [
                     [
-                        InlineKeyboardButton('🔗 Join Here 😍🔥', url='https://t.me/BX_Botz')
+                        InlineKeyboardButton('🔗 Join Here 😍🔥', url='https://t.me/MH_MAIN')
                     ]
                     ]
                 
